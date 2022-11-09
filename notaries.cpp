@@ -567,4 +567,15 @@ void RegisterNotariesRPCCommands(CRPCTable &tableRPC)
     ...
     $(BITCOIN_CORE_H) \
     $(LIBZCASH_H)
+
+    4. Add in src/rpc/register.h:
+    ...
+    void RegisterRawTransactionRPCCommands(CRPCTable &tableRPC);
+    void RegisterNotariesRPCCommands(CRPCTable &tableRPC); # <- this line should be added
+    ...
+    static inline void RegisterAllCoreRPCCommands(CRPCTable &tableRPC)
+    {
+    ...
+    RegisterRawTransactionRPCCommands(tableRPC);
+    RegisterNotariesRPCCommands(tableRPC); # <- this line should be added
 */
