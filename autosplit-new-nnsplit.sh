@@ -94,11 +94,13 @@ function do_autosplit() {
                     else
                         log_print "txid.${RED}$txid${RESET} - FAIL"
                         # tx possible fail, because iguana produced incorrect sign, no problem, let's resign it by daemon and broadcast (perfect solution, isn't it?)
-                        daemonsigned=$($komodo_cli $asset signrawtransaction $signed | jq -r .hex)
-                        newtxid=$($komodo_cli $asset sendrawtransaction $daemonsigned)
-                        log_print "newtxid.$newtxid - BROADCASTED"
+                        # daemonsigned=$($komodo_cli $asset signrawtransaction $signed | jq -r .hex)
+                        # newtxid=$($komodo_cli $asset sendrawtransaction $daemonsigned)
+                        # log_print "newtxid.$newtxid - BROADCASTED"
 
                     fi
+                    log_print "${DARKGREY}$komodo_cli $asset cleanwallettransactions${RESET}"
+                    $komodo_cli $asset cleanwallettransactions
                 else
                     log_print "${RED}Iguana doesn't return txid ...${RESET}"
                 fi
