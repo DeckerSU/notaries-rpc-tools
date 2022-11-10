@@ -365,7 +365,7 @@ UniValue nn_split(const UniValue& params, bool fHelp, const CPubKey& mypk) {
                 mergedUTXOValue += nValue;
                 utxoCounter++;
 
-                std::cerr << out.ToString() << " " << FormatMoney(nValue) << " " << script.ToString() << std::endl;
+                // std::cerr << out.ToString() << " " << FormatMoney(nValue) << " " << script.ToString() << std::endl;
 
                 if (mergedUTXOValue >= neededValue)
                     break;
