@@ -4,7 +4,7 @@ This repo provides a few useful RPC methods for Komodo notary nodes, which was n
 For example, `utxo spliting`. Before, it was implemented in iguana or various scripts, but splitting directly
 from daemon was not possible. Not is time to fix it.
 
-First of all, start your daemon as notary node with corresponding `-pubkey=%your_compressed_public_key%'. 
+First of all, start your daemon as notary node with corresponding `-pubkey=%your_compressed_public_key%`.
 Then, start daemon and make a call to `nn_getwalletinfo`. It haven't any params, so, it could be called simply
 like: `./src/komodo-cli -ac_name=DECKER nn_getwalletinfo`.
 
