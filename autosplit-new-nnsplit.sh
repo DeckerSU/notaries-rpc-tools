@@ -99,8 +99,8 @@ function do_autosplit() {
                         # log_print "newtxid.$newtxid - BROADCASTED"
 
                     fi
-                    log_print "${DARKGREY}$komodo_cli $asset cleanwallettransactions${RESET}"
-                    $komodo_cli $asset cleanwallettransactions
+                    #log_print "${DARKGREY}$komodo_cli $asset cleanwallettransactions${RESET}"
+                    #$komodo_cli $asset cleanwallettransactions
                 else
                     log_print "${RED}Iguana doesn't return txid ...${RESET}"
                 fi
